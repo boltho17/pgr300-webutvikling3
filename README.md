@@ -4,65 +4,29 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `yarn start`
+### `npm start` or `yarn start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Nettsiden krever at newsAPI kjører på https://localhost:5001/
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Funksjonalitet:
+- CRUD mot database fungerer som tiltenkt. Delete og Update gjøres fra fremvisning av en egenopprettet post.
+- Nettsiden oppdateres(re-renders) automatisk når en post slettes eller redigeres.
+##
 
-### `yarn test`
+Ekstra funksjonalitet: 
+- Filtrer mellom nyheter fra Norge, Usa, Kina. (Fungerer kun i root /, ikke under hver kategori)
+- Søkefelt hvor man kan søke etter hvilke som helst nøkkelord i en artikkel. (Søker kun i US news)
+- Dynamisk "Input field validation" på Tittel, Beskrivelse og Innhold når man oppretter ny post under Create New.
+- Mulighet til å laste opp et bildefil og få dette fremvist i et lite preview vindu. (Dessverre blir det ikke sendt til API selvom endepunkt er satt og fungerer med Postman. ImageURL fungerer fint.)
+##
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Hvis jeg hadde hatt mer tid ville jeg:
+- Sjekket for feil ved innlastning av data fra hvert API, selvom et feiler ville fremdeles data fra det andre blitt vist.
+- Gjort "category" på egenopprettede posts til query parameter slik at disse kunne blitt sortert og presentert i riktig kategori slik som posts fra newsAPI.org.
+- Endret søkefunksjon til å filtrere posts som er hentet fra API og satt til App.js state, fremfor å gjøre nytt API-kall.
+- Rettet opp i bug som gjør at Carousel ikke vises når man sletter eller oppdaterer en post.
+- Implementert bruker innlogging med "authorization", f.eks med Google Oauth.
+- Flyttet all state ut i Redux Store.
+- Oppdatert "featured newsposts" i Carousel når man navigerer seg til en annen kategori eller språk.
+- Gjort Carousel klikkbar slik at man kunne åpnet "featured newspost" i NewsPostDisplay.
+##

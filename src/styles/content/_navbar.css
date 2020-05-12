@@ -1,0 +1,20 @@
+.navbar-brand {
+  cursor: crosshair; }
+
+.nav-link {
+  padding: 2px; }
+
+.nav-link:hover {
+  border-bottom: 1px outset white; }
+
+#logo {
+  width: 80px;
+  height: 30px;
+  background-size: 100px 110px;
+  background-position: center;
+  position: relative;
+  left: -500px;
+  -webkit-animation: arrive 1s 0.5s ease-out forwards, bounce 1s infinite ease-in-out;
+  animation: arrive 1s 0.5s ease-out forwards, bounce 1s infinite ease-in-out; }
+
+/*# sourceMappingURL=_navbar.css.map*/
